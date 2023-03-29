@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    import fetch from "node-fetch";
+
+        const API_KEY = '{{919f69581ff0616daa7c20273c5c8b44}}';
+
+        const endpointUrl = new URL('https://api.themoviedb.org/3/movie/550?api_key=919f69581ff0616daa7c20273c5c8b44');
+
+        const queryParameters = new URLSearchParams({
+            api_key: API_KEY,
+            language: 'en-US'
+        });
+
+        async function fetchData() {
+            try {
+                endpointUrl.search = queryParameters;
+                const response = await fetch(endpointUrl);
+
+                // Call to function that prints the response
+                printResponse(response);
+                console.log(response);
+            } catch (error) {
+
+                // Call to function that prints the error message, if any
+                printError(error);
+                console.log(error);
+            }
+        }
+
+        // Call to function that makes API call
+        fetchData();
+</script>

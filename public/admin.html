@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>ADMINSTRATIVE DASHBOARD</h1>
+    <h1>ADD TO MOVIE  OR REMOVE MOVIE</h1>
+    <input type="file" name="" id="" onchange="pickfile(event)"> <br>
+    <br>
+    <input id="title" type="text" placeholder="movie Tiltle"> <br>
+    <br>
+    <input id="description" type="text" placeholder="Movie Description"> <br>
+    <br>
+    <img id="image" width="100px" height="100px" src="" alt=""> <br>
+    <!-- <input value="1000" type="text" readonly> -->
+    <br>
+    <button type="submit" onclick="svu()">Add to movie</button>
+    <div id="screen"></div>
+</body>
+</html>
+<script>
+    let image = document.getElementById("image")
+    let title = document.getElementById("title")
+    let description = document.getElementById("description")
+    let screen = document.getElementById("screen")
+    function pickfile(ev) {
+        let reader = new FileReader()
+        let file = ev.target.files[0];
+        // console.log(file);
+        reader.onload = (file) => {
+            // console.log(reader.result);
+            document.getElementById("image").src = reader.result
+        }
+        if (file) {
+            let data = reader.readAsDataURL(file);
+        }
+    } 
+    let moviesarray = JSON.parse(localStorage.getItem("moviesarray"))
+    console.log(moviesarray);
+    // let moviesarray = localStorage.getItem("moviesarray".JSON)
+
+    
+    for (let index = 0; index < moviesarray.length; index++) {
+            const element = moviesarray[index];
+            document.getElementById("screen").innerHTML += `
+            <div class="allmovie">
+                <div class="movie">
+                    <div class="mv-img mx-4 mt-2 ">
+                      <img src="${element.image}" alt="">  
+                    </div>
+                    <h1>${element.title}</h1>
+                    <button class="btn btn-outline-danger mb-3 mx-2" onclick="moviedetials(${index})"> Click to see full details </button>
+                    <button onclick="deletemovie(${index})" class="btn btn-info mx-5">DELETE MOVIE</button>
+                </div>
+            </div>
+`;
+        }
+    function svu() {
+        moviesarray.push({
+            image: image.src,
+            title: title.value,
+            description: description.value
+        })     
+        console.log(moviesarray);
+        localStorage.setItem("moviesarray", JSON.stringify(moviesarray));
+    }
+    function deletemovie(index) {
+        moviesarray.splice(index, 1);
+        localStorage.setItem("moviesarray", JSON.stringify(moviesarray));
+        window.location.href = "./admin.html"
+    }
+</script>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>

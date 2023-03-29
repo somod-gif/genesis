@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In page</title>
+    <link rel="stylesheet" href="./icofont/icofont.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <link rel="icon" href="./LOGO.png">
+</head>
+<style>
+    .all{
+        display: flex;
+        /* border: 3px solid black; */
+        /* width: 80%; */
+        margin-top: 70px;
+        /* margin: auto; */
+    }
+    @media (max-width: 1000px) {
+        .all{
+            display: block;
+        }
+    }
+</style>
+<body>
+    <main>
+        <div class="row all mx-5 ">
+            <div class="col-6 ">
+                <img height="500px" width="100%" src="./seat1234.jpg" alt="">
+            </div>
+            <div class="col-6">
+                <form action="">
+                    <input class="form-control" type="email" id="email2" placeholder="Email"> <br>
+                    <input class="form-control" type="password" id="password2" placeholder="Password"> <br>
+                    <button onclick="login()" class="btn btn-outline-danger">Log In</button> <br>
+                    <h5>Don't Have an account <a href="">Sign up</a></h5>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.js"></script>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+<script>
+    let email2 = document.getElementById("email2")
+    let password2 = document.getElementById("password2")
+     let userdetails = JSON.parse(localStorage.getItem("userdetails"));
+        console.log(userdetails);
+    function login() {
+        let wahala = userdetails.find((curr)=>curr.email == email2.value && curr.password  == password2.value)
+        if (wahala) {
+            alert("Password Correct")
+            window.location.href = "./index.html"
+        } else {
+            alert("Incorrect Password")
+        }
+    }
+</script>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./icofont/icofont.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <link rel="icon" href="./LOGO.png">
+</head>
+<style>
+    .all{
+        display: flex;
+        /* border: 3px solid black; */
+        width: 80%;
+        /* margin-top: 30px; */
+        /* margin: auto; */
+    }
+    @media (max-width: 1000px) {
+        .all{
+            display: block;
+        }
+    }
+    .rdd{
+        width: 12px;
+        height: 12px;
+        margin-top: 7px;
+        margin-left: 8px;
+        margin-right: 8px;
+        border-radius: 100%;
+        border: 1px solid black;
+    }
+    .rtx a{
+        text-decoration: none;
+        color: blue;
+    }
+    .rtx a:hover{
+        text-decoration: underline;
+    }
+    hr{
+        color: black;
+        background-color: black;
+        font-weight: 900;
+        font-size: 6rem;
+    }
+</style>
+<body>
+    <main>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Log in </a>
+        </nav>
+       <div class="row all mx-1 mt-4 ">
+            <div class="col-6 ">
+                <img height="500px" width="100%" src="./seat1234.jpg" alt="">
+            </div>
+            <div class="col-6 mt-3">
+
+                <form action="" class=" h-100 w-100 pt-4 rounded shadow">
+                    <input id="firstname" class="form-control" type="text" placeholder="First Name*"> <br>
+                    <input id="lastname" class="form-control" type="text" placeholder="Last Name*"> <br>
+                    <input id="mobile" class="form-control" type="number" placeholder="Mobile*"> <br>
+                    <input id="email" class="form-control" type="email" placeholder="Email*"> <br>
+                    <input id="password" class="form-control" type="password" placeholder="Password (min 4 characters)*"> <br>
+                    <input id="confirmpassword" class="form-control" type="password" placeholder="confirm Password*"> <br>
+                    <label for="">Gender</label> <br>
+                    <select class="form-control" name="" id="">
+                        <option value="">--- Select Gender ---</option>
+                        <option value="">Male</option>
+                        <option value="">Female</option>
+                    </select>
+                    <div class="rd d-flex mt-2">
+                        <br>
+                        <input type="radio" name="" id="" style="margin-left: 15px; margin-right: 10px; width: 15px;">
+                        <div class="rtx">
+                            <p>I have read and accepted the <a href="https://onecinemas.com.np/Terms-n-conditions">Terms of Use </a> and <a href="https://onecinemas.com.np/Privacy">Privacy and policy</a></p>
+                        </div>
+                    </div>
+                    <button onclick="signup()" class="btn btn-outline-warning mt-3 mx-5">Sign Up</button> <br>
+                    <br>
+                    <div class="d-flex">
+                        <hr>
+                         or
+                        <hr>
+                    </div>
+                    <button class="btn btn-outline-danger mx-5">Sign Up with Google</button>
+                    
+                    <!-- <h5>Have a Account before <a href="./login.html">Sign In</a></h5> -->
+                </form>
+                
+            </div>
+       </div> 
+    </main>
+</body>
+<a href="./login.html"></a>
+</html>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.js"></script>
+<script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+<script>
+    let firstname = document.getElementById("firstname")
+    let lastname = document.getElementById("lastname")
+    let mobile = document.getElementById("mobile")
+    let email = document.getElementById("email")
+    let password = document.getElementById("password")
+    let confirmpassword = document.getElementById("confirmpassword")
+    let userdetails = [];
+    function signup() {
+        let details = {
+            firstname: firstname.value,
+            lastname: lastname.value,
+            mobile: mobile.value,
+            email: email.value,
+            password: password.value,
+            confirmpassword: confirmpassword.value
+        }
+        userdetails.push(details);
+        
+         if (firstname.value == "" || lastname.value == "" || mobile.value == "" || email.value == "" || password.value == "" ||  confirmpassword.value ==  ""){
+            alert("Fill in the form")
+        } else if (password.value !== confirmpassword.value){
+            alert("password incorrect")
+        } else if (password.value == confirmpassword.value) {
+            alert("correct password")
+            window.location.href = "./login.html"
+            localStorage.setItem("userdetails", JSON.stringify(userdetails));
+        } else{
+            alert("failed")
+        }
+    }
+        
+</script>

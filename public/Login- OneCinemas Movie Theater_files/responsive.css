@@ -1,0 +1,532 @@
+/* Responsive iFrame */
+.sfFlexVideo {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.sfFlexVideo iframe,
+.sfFlexVideo object,
+.sfFlexVideo embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#sfResponsiveNavBtn {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .sfInnerwrapper {
+    width: 96%;
+  }
+  .sfInnerwrapper .sfMoreblocks,
+.sfInnerwrapper .sfMoreblocks .sfColswrap {
+    margin: 0;
+  }
+  .sfStickySidebar {
+    display: none;
+  }
+  #sfMainWrapper.sfCol_75 {
+    width: 100%;
+  }
+  .login-form {
+    grid-template-columns: 310px auto;
+  }
+  .form-img {
+    width: 310px;
+  }
+  .form-img img,
+.login-form .overlay {
+    transform: scale(1);
+  }
+  .social-login,
+.form-img h4 {
+    left: 24px;
+  }
+  .form-tab {
+    padding: 20px;
+  }
+  .divPrintBill > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 960px) {
+  #sfSlider .sfContent h1 {
+    font-size: 26px;
+  }
+  #sfSlider p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sfTopbar {
+    height: 90px;
+  }
+  .sfLoggedTopBar {
+    margin-top: 90px;
+  }
+  .sfTopbar ul.left,
+.sfTopbar ul.left li img,
+.sfTopbar ul.left li a,
+.sfTopbar ul.left li span {
+    float: none;
+    overflow: hidden;
+  }
+  .sfTopbar ul.right li {
+    border-left: none;
+  }
+  body {
+    transition: all 0.3s ease-in-out;
+  }
+  [class*=sfCol_],
+.sfFixed[class*=sfCol_] {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0;
+    /* float: none; */
+  }
+  #sfLoginstatus {
+    display: none;
+  }
+  #sfHeaders {
+    padding: 0;
+  }
+  #sfHeaders [class*=sfCol_] {
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+  }
+  /* Responsive Menu */
+  #sfResponsiveNavBtn {
+    border: none;
+    cursor: pointer;
+    right: 20px;
+    padding: 10px 35px 16px 0px;
+    z-index: 88;
+  }
+  #sfResponsiveNavBtn span,
+#sfResponsiveNavBtn span:before,
+#sfResponsiveNavBtn span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 2px;
+    width: 35px;
+    background: #aaa;
+    position: absolute;
+    display: block;
+    content: "";
+  }
+  #sfResponsiveNavBtn span:before {
+    top: -10px;
+  }
+  #sfResponsiveNavBtn span:after {
+    bottom: -10px;
+  }
+  #sfResponsiveNavBtn span,
+#sfResponsiveNavBtn span:before,
+#sfResponsiveNavBtn span:after {
+    transition: all 0.3s;
+  }
+  #sfResponsiveNavBtn.active span {
+    background-color: transparent;
+  }
+  #sfResponsiveNavBtn.active span:before,
+#sfResponsiveNavBtn.active span:after {
+    top: 0;
+  }
+  #sfResponsiveNavBtn.active span:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  #sfResponsiveNavBtn.active span:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .sf-menu > li:first-child {
+    margin-top: 30px;
+  }
+  .sf-menu > li > a {
+    padding: 15px;
+  }
+  .sfNavigation li.sfActive > a {
+    border-bottom: none;
+  }
+  .sf-menu li.sfParent > ul {
+    position: relative;
+    border: none;
+    box-shadow: none;
+    display: block !important;
+    visibility: visible !important;
+    padding-left: 15px;
+  }
+  .sf-menu li,
+.sfDropdown {
+    float: none;
+  }
+  .sfDropdown ul,
+.sfDropdown ul ul {
+    position: relative;
+    top: 0;
+    left: 0 !important;
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  .sf-menu li.sfParent li.sfParent ul {
+    position: relative;
+  }
+  #sfResponsiveNavBtn {
+    display: block;
+  }
+  .offCanvas {
+    overflow: hidden;
+    position: relative;
+    -webkit-transform: translateX(-80%);
+    -ms-transform: translateX(-80%);
+    -o-transform: translateX(-80%);
+    transform: translateX(0%);
+  }
+  .sfNavigation {
+    overflow: hidden;
+    min-height: 24px;
+    position: relative;
+  }
+  .offCanvas .sfNavigation {
+    overflow: visible;
+  }
+  #sfResponsiveNavBtn + .sf-menu {
+    position: fixed;
+    top: 53px;
+    left: 100%;
+    background: #000000;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    overflow: auto;
+    transition: all 0.3s ease-in-out;
+    line-height: 4;
+    text-align: center;
+  }
+  #sfResponsiveNavBtn + .sf-menu .sfPageicon {
+    display: none;
+  }
+  body.offCanvas #sfResponsiveNavBtn + .sf-menu {
+    transition: all 0.3s ease-in-out;
+  }
+  .sfStickySidebar {
+    display: none;
+  }
+  .sfBlockResponsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #dddddd;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sfBlockResponsive > .sfTable {
+    margin-bottom: 0;
+  }
+  .sfBlockResponsive > .sfTable > thead > tr > th,
+.sfBlockResponsive > .sfTable > tbody > tr > th,
+.sfBlockResponsive > .sfTable > tfoot > tr > th,
+.sfBlockResponsive > .sfTable > thead > tr > td,
+.sfBlockResponsive > .sfTable > tbody > tr > td,
+.sfBlockResponsive > .sfTable > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .social li {
+    width: 100%;
+  }
+  .sfStickySidebar,
+.sfNavigation li.sfActive a:after {
+    display: none;
+  }
+  .sfLogos {
+    order: 1;
+  }
+  .sfLoginStatus {
+    order: 2;
+  }
+  .sfNav {
+    order: 3;
+  }
+  .movies-showing {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .now-showing,
+.movie-tab {
+    padding: 0px 20px;
+  }
+  ul.coming-soon-movies,
+ul.next-change-movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .membership-card {
+    height: 166px;
+  }
+  .sfFooter {
+    text-align: center;
+    line-height: 2;
+  }
+  ul.sf-menu li.sfActive a {
+    border-bottom: none;
+  }
+  #main-booking.is-visible,
+#main-trailer.is-visible {
+    width: 100%;
+  }
+  .seat-status ul li {
+    font-size: 13px;
+  }
+  .summary-pannel,
+.ticket-summary,
+.food-summary,
+.booking-cart {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  .my-ticket {
+    grid-template-columns: auto;
+    padding: 0px 30px;
+  }
+  .sfMaps {
+    margin-top: 30px;
+  }
+  .booking {
+    margin-bottom: 30px;
+  }
+  h2.inner-header {
+    padding: 0px 20px;
+  }
+  .show-detail {
+    margin: 0px 25px;
+  }
+  .view-time {
+    margin: 100px 20px;
+  }
+  .movie-trailer {
+    height: 380px;
+  }
+  .movies-details {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .login-form {
+    grid-template-columns: 100%;
+    height: auto;
+  }
+  .form-img {
+    width: 100%;
+    height: 150px;
+  }
+  .next-changes,
+.upcoming-movies {
+    padding: 0px 20px;
+  }
+  .payment-partners {
+    justify-content: center;
+    text-align: center;
+  }
+  /*--====================== Footer --*/
+  .social-media ul {
+    margin: 0;
+  }
+  .social-media ul li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .social-media ul li a {
+    width: 35px;
+    height: 35px;
+    background: #000;
+    color: #fff;
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: all 0.5s ease-in-out;
+  }
+  .social-media ul li a i {
+    line-height: 2.2;
+    text-align: center;
+    padding-left: 4px;
+  }
+  .social-media ul li a:hover {
+    background: #666666;
+    transition: all 0.5s ease-in-out;
+  }
+  .sfFooter {
+    margin: 100px 0 0;
+  }
+  .sfFooter .item {
+    margin-bottom: 30px;
+  }
+  .sfFooter .item h4 {
+    font-size: 20px;
+    margin: 0 0 14px;
+  }
+  .sfFooter .item h5 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .footer-links li {
+    display: inline-block;
+  }
+  .footer-links li a {
+    padding: 0 15px;
+  }
+  .footer-links li a img {
+    height: 50px;
+  }
+  .sfFooterMenu {
+    margin: 0;
+  }
+  .sfFooterMenu .item-wrap {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .movies-showing {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .seat-status-info ul li span {
+    width: 17px;
+    height: 17px;
+  }
+  .seat-status-info ul li {
+    font-size: 13px;
+  }
+  .selectShowDays ul > li a {
+    width: 45px;
+    height: 45px;
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #sfSlider .sfContent h1 {
+    font-size: 20px;
+  }
+  #sfSlider p {
+    font-size: 16px;
+  }
+  .sfInnerBanner h1 {
+    font-size: 24px;
+  }
+  .sfGrandTotal h2 {
+    font-size: 16px;
+  }
+  .payment-partners {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 786px) {
+  .solution span[class*=icon-] {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  body.offCanvas #sfResponsiveNavBtn + .sf-menu {
+    left: 0;
+  }
+  .movies-showing,
+ul.coming-soon-movies,
+ul.next-change-movies {
+    grid-template-rows: auto;
+  }
+  .card-info {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 342px;
+    height: 140px;
+  }
+  .membership-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .seat-status-info {
+    flex-direction: column;
+  }
+  .seat-status-info h3.title-txt {
+    margin: 0;
+  }
+  .sfLoginStatus {
+    padding: 0px !important;
+  }
+  .sfNav {
+    width: 60px !important;
+  }
+  .movie-trailer {
+    height: 190px;
+  }
+  .movies-info h2 {
+    font-size: 20px;
+  }
+  .nowshowing-detail {
+    flex-direction: column;
+  }
+  .nowshowing-detail {
+    flex-direction: column;
+  }
+  .audi-info {
+    width: 100%;
+  }
+  .audi-time {
+    flex-direction: column;
+  }
+  ul.show-time-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .signup {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .booking {
+    grid-template-columns: auto;
+  }
+  .seat-status {
+    flex-direction: column;
+  }
+  .coupon-wrapper {
+    grid-template-columns: auto;
+  }
+  table.ticket-charge {
+    grid-column: auto;
+  }
+  .divPrintBill > div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .movie-poster img {
+    height: auto;
+    min-height: 150px;
+  }
+  .movie-link {
+    width: auto;
+    height: auto;
+    bottom: 15px;
+    right: 20px;
+    padding: 0;
+  }
+  .movie-link a {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */
