@@ -2,6 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden; */
+    /* width: 100%; */
+    /* overflow-y: hidden; */
+}
+main{
+    overflow-y: hidden;
+}
+.nvv{
+    position: sticky;
+    top: 0px;
 }
 .switch {
         font-size: 17px;
@@ -196,11 +206,11 @@
         margin-top: 60px;
     }
     /* ABOUT US CSS */
-     body{
+     /* body{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+    } */
     .ab{
         max-width: 100%;
         height: 400px;
@@ -246,11 +256,11 @@
         position: relative;
     }
     .map{
-        width: 600px;
-        /* margin-top: 60px; */
-        height: 350px;
-        margin: 60px auto;
+        width: 805px;
         border: 1px solid black;
+        height: 605px;
+        /* margin-top: 30px; */
+        margin: auto;
     }
     .hm{
         width: 70px;
@@ -286,7 +296,7 @@
 }
 .movie{
     width: 300px;
-    /* height: 500px; */
+    height: 500px;
     border: 1px solid black;
     color: white;
     background-color: black;
@@ -303,12 +313,12 @@
 .movie h1{
     padding-left: 15px;
 }
-.allmovie{
+/* .allmovie{ */
     /* display: flex; */
     /* flex-wrap: wrap; */
     /* max-width: 100%; */
     /* border: 3px solid green; */
-}
+/* } */
 .wel{
     font-size: 5rem;
     font-family: serif;
@@ -316,14 +326,24 @@
 }
 #screen{
     display: flex;
-    flex-wrap: wrap;
+    height: 600px;
+    width: 90%;
+    overflow-x: auto;
+    margin: auto;
+    /* flex-wrap: wrap; */
     /* background-color: red; */
 }
+#screen::-webkit-scrollbar{
+    display: none;
+}
 .mv-img img{
-    width: 200px;
+    width: 220px;
+    border-radius: 10px;
+    margin-left: 15px;
     /* margin: auto; */
 }
 .mv-img img:hover{
+    zoom: 99%;
     border: 3px solid red;
     /* border: 3px solid rgb(255, 193, 7); */
 }
@@ -339,13 +359,20 @@
     height: 350px;
     margin-top: 30px;
 }
-.dtss{
+#dtss{
     max-width: 100%;
     /* height: 400px; */
     /* background-image: url(./battle\ on\ bukka\ street.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     /* background-image: url(./battle\ on\ bukka\ street.jpg); */
+}
+.cvc{
+    text-decoration: none;
+    color: red;
+}
+.cvc:hover{
+    color: white;
 }
 .h1dts{
     font-size: 5rem;
@@ -357,6 +384,28 @@
     text-align: center;
 }
 #lo{
+    display: flex;
+        /* border: 3px solid black; */
     width: 100%;
     /* background-color: red; */
 }
+#all{
+        display: flex;
+        /* border: 3px solid black; */
+        width: 100%;
+    }
+    @media (max-width: 1000px) {
+        #all{
+            display: block;
+            margin-left: 40px;
+            /* margin: auto; */
+        }
+        #lo{
+            display: block;
+            margin-left: 40px;
+            /* margin: auto; */
+        }
+    }
+    .aboutticket{
+
+    }
